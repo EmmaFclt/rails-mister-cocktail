@@ -1,0 +1,7 @@
+<h1>Become a cocktail expert</h1>
+
+<% @cocktails.each do |cocktail|%>
+  <div><%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %></div>
+<% end %>
+<br>
+<p class="btn btn-dark"><%= link_to "Create a new cocktail", new_cocktail_path %></p>

@@ -1,0 +1,8 @@
+<h1><%= @cocktail.name.capitalize %></h1>
+
+<ul><% @cocktail.doses.each do |dose| %>
+      <li><%= dose.description%> de <%= dose.ingredient.name %></li>
+      <% end %>
+</ul>
+
+<p class="btn btn-dark"><%= link_to "Back to Cocktails' List", cocktails_path %></p>
