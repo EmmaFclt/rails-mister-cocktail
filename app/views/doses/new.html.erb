@@ -1,0 +1,6 @@
+<h1>What is th receipe for <%= @cocktail.name %></h1>
+
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
+  <%= f.input :description, as: :text %>
+  <%= f.submit "Create", class: "btn btn-dark" %>
+<% end %>

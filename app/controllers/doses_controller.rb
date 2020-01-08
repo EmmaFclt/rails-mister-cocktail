@@ -4,7 +4,10 @@ class DosesController < ApplicationController
   end
 
   def create
+    raise
+    @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new(doses_params)
+    @dose.cocktail = @cocktail
     @dose.save
   end
 
@@ -12,10 +15,10 @@ class DosesController < ApplicationController
     @dose = Dose.find(params[:id])
     @dose.destroy
   end
-end
 
-private
+  private
 
-def doses_params
-  params.require(:dose).permit(:description, :cocktail_id, :ingredient_id)
+  def doses_params
+    params.require(:dose).permit(:description, :ingredient_id)
+  end
 end
